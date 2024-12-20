@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Shoe</title>
+</head>
+<body>
+    <h1>Add a new shoe</h1>
+    <form method="post" action="{% url 'add_shoe' %}">
+        {% csrf_token %}
+
+        <label for="sName">Shoe name:</label>
+        <input type="text" name="sName"><br>
+
+        <label for="sBrand">Brand:</label>
+        <input type="text" name="sBrand"><br>
+
+        <label for="size">Size:</label>
+        <input type="text" name="size"><br>
+
+        <label for="sType">Type:</label>
+        <input type="text" name="sType"><br>
+
+        <label for="price">Price:</label>
+        <input type="text" step= "0.01" name="price"><br>
+
+        <label for="status"></label>
+        <select name="status">
+            <option value="mens">Mens</option>
+            <option value="women">Women</option>
+            <option value="kids">Kids</option>
+        </select><br>
+
+        <input type="submit" value="Add Shoe">
+
+    </form>
+</body>
+</html>
